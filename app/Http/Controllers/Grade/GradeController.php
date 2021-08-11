@@ -27,19 +27,25 @@ class GradeController extends Controller
         }
     }
 
-    public function show($id)
+    public function update( StoreGrades  $request )
     {
-        //
-    }
+        try {
 
-    public function edit($id)
-    {
-        //
-    }
+            $validated  = $request->validated();
+            $Grades     = Grade::findOrFail($request->id);
 
-    public function update(Request $request, $id)
-    {
-        //
+            $Grades->update([
+              $Grades->Name  =  ['ar' => $request->Name, 'en' => $request->Name_en] ,
+              $Grades->Notes = $request->Notes ,
+            ]);
+
+            toastr()->success(trans('messages.Update'));
+            return redirect()->route('Grades.index');
+        }
+        catch
+        (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
     }
 
     public function destroy($id)
