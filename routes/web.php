@@ -6,7 +6,13 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group([ 'middleware' => ['guest'] ] , function () {
+
+    Route::get('/', function () {
+        return view('auth.login');
+    });
+
+});
 
 Route::group(
     [
@@ -14,9 +20,15 @@ Route::group(
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
     ], function(){
 
-        Route::get('/', function () {
-            return view('dashboard');
+        Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+
+
+        // Grades
+        Route::group(['namespace' => 'Grade'], function () {
+            Route::resource('/Grades' , 'GradesController');
+            Route::resource('/Grade'  , 'GradeController');
         });
+
 });
 
 

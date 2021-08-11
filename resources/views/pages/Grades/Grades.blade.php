@@ -64,7 +64,8 @@
                                 <td>
                                     <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
                                         data-target="#edit{{ $Grade->id }}"
-                                        title="{{ trans('Grades_trans.Edit') }}"><i class="fa fa-edit"></i></button>
+                                        title="{{ trans('Grades_trans.Edit') }}"><i
+                                            class="fa fa-edit"></i></button>
                                     <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
                                         data-target="#delete{{ $Grade->id }}"
                                         title="{{ trans('Grades_trans.Delete') }}"><i
@@ -89,7 +90,7 @@
                                         </div>
                                         <div class="modal-body">
                                             <!-- add_form -->
-                                            <form action="{{ route('Grades.update', 'test') }}" method="post">
+                                            <form action="{{ route('Grade.update', 'test') }}" method="post">
                                                 {{ method_field('patch') }}
                                                 @csrf
                                                 <div class="row">
@@ -152,7 +153,7 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form action="{{ route('Grades.destroy', 'test') }}" method="post">
+                                            <form action="{{ route('Grade.destroy', 'test') }}" method="post">
                                                 {{ method_field('Delete') }}
                                                 @csrf
                                                 {{ trans('Grades_trans.Warning_Grade') }}
@@ -194,7 +195,7 @@
             </div>
             <div class="modal-body">
                 <!-- add_form -->
-                <form action="{{ route('Grades.store') }}" method="POST">
+                <form action="{{ route('Grade.store') }}" method="POST">
                     @csrf
                     <div class="row">
                         <div class="col">

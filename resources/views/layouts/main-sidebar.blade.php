@@ -27,8 +27,7 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="Grades-menu" class="collapse" data-parent="#sidebarnav">
-                            <li><a href=""></a></li>
-
+                            <li><a href="{{ route('Grades.index') }}">{{ trans('main_trans.Grades_list') }}</a></li>
                         </ul>
                     </li>
                     <!-- classes-->
@@ -40,7 +39,7 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="classes-menu" class="collapse" data-parent="#sidebarnav">
-                            <li><a href=""> </a>
+                            <li><a href="">{{ trans('main_trans.List_classes') }}</a>
                             </li>
                         </ul>
                     </li>
@@ -55,7 +54,8 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="sections-menu" class="collapse" data-parent="#sidebarnav">
-                            <li><a href="">{{ trans('main_trans.List_sections') }}</a></li>
+                            <li><a href="">{{ trans('main_trans.List_sections') }}</a>
+                            </li>
                         </ul>
                     </li>
 
