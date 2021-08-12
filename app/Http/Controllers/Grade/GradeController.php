@@ -42,14 +42,15 @@ class GradeController extends Controller
             toastr()->success(trans('messages.Update'));
             return redirect()->route('Grades.index');
         }
-        catch
-        (\Exception $e) {
+        catch (\Exception $e){
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
     }
 
-    public function destroy($id)
+    public function destroy( Request $request )
     {
-        //
+        $Grades = Grade::findOrFail($request->id)->delete();
+        toastr()->error(trans('messages.Delete'));
+        return redirect()->route('Grades.index');
     }
 }
