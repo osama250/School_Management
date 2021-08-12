@@ -42,7 +42,7 @@
 
             <br><br>
 
-            <form action="" method="POST">
+            <form action="{{ route('Filter_Classes') }}" method="POST">
                 {{ csrf_field() }}
                 <select class="selectpicker" data-style="btn-info" name="Grade_id" required
                     onchange="this.form.submit()">
@@ -71,10 +71,8 @@
                     <tbody>
 
                         @if (isset($details))
-
                             <?php $List_Classes = $details; ?>
                         @else
-
                             <?php $List_Classes = $My_Classes; ?>
                         @endif
 
@@ -326,7 +324,7 @@ aria-hidden="true">
             </button>
         </div>
 
-        <form action="" method="POST">
+        <form action="{{ route('delete_all') }}" method="POST">
             {{ csrf_field() }}
             <div class="modal-body">
                 {{ trans('My_Classes_trans.Warning_Grade') }}
@@ -370,8 +368,5 @@ aria-hidden="true">
         });
     });
 </script>
-
-
-
 
 @endsection

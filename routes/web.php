@@ -33,6 +33,8 @@ Route::group(
         Route::group(['namespace' => 'Classrooms'], function () {
             Route::resource('Classrooms', 'ClassesroomController');
             Route::resource('Classroom', 'ClassroomController');
+            Route::post('delete_all', 'ClassesroomController@delete_all')->name('delete_all');
+            Route::post('Filter_Classes', 'ClassesroomController@Filter_Classes')->name('Filter_Classes');
         });
 
 });
