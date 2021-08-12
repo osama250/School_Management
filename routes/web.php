@@ -37,6 +37,13 @@ Route::group(
             Route::post('Filter_Classes', 'ClassesroomController@Filter_Classes')->name('Filter_Classes');
         });
 
+        // Section
+        Route::group(['namespace' => 'Sections'], function () {
+            Route::resource('Sections', 'SectionsController');
+            Route::resource('Section', 'SectionController');
+            Route::get('/classes/{id}', 'SectionsController@getclasses');
+        });
+
 });
 
 
