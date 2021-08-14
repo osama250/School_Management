@@ -44,6 +44,9 @@ Route::group(
             Route::get('/classes/{id}', 'SectionsController@getclasses');
         });
 
+        // Parents
+        Route::view('add_parent','livewire.show_Form');
+
 });
 
 

@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             religionTableSeeder::class ,
             BloodTableSeeder::class ,
             NationalitiesTableSeeder::class ,
+            ParentsTableSeeder::class,
          ]);
     }
 }
