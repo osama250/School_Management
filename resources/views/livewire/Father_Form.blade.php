@@ -128,7 +128,7 @@
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
-
+        {{-- do what edit or add --}}
         @if ($updateMode)
             <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" wire:click="firstStepSubmit_edit"
                 type="button">{{ trans('Parent_trans.Next') }}

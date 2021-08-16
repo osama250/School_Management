@@ -14,7 +14,7 @@
     @endif
 
 
-    @if ($show_table)
+    @if ($show_table) {{-- to show table --}}
         @include('livewire.Parent_Table')
     @else
         <div class="stepwizard">
@@ -60,7 +60,7 @@
 
                     <button class="btn btn-danger btn-sm nextBtn btn-lg pull-right" type="button"
                         wire:click="back(2)">{{ trans('Parent_trans.Back') }}</button>
-
+                    {{-- do what edit or add --}}
                     @if ($updateMode)
                         <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" wire:click="submitForm_edit"
                             type="button">{{ trans('Parent_trans.Finish') }}
