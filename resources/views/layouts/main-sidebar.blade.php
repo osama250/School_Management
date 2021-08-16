@@ -115,8 +115,6 @@
                     </ul>
                 </li>
 
-
-
                 <!-- Teachers-->
                 <li>
                     <a href="javascript:void(0);" data-toggle="collapse" data-target="#Teachers-menu">
@@ -126,11 +124,10 @@
                         <div class="clearfix"></div>
                     </a>
                     <ul id="Teachers-menu" class="collapse" data-parent="#sidebarnav">
-                        <li> <a href="">{{ trans('main_trans.List_Teachers') }}</a>
+                        <li> <a href="{{ route('Teachers.index') }}">{{ trans('main_trans.List_Teachers') }}</a>
                         </li>
                     </ul>
                 </li>
-
 
                 <!-- Parents-->
                 <li>
