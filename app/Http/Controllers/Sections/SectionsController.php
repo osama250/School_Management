@@ -5,15 +5,17 @@ namespace App\Http\Controllers\Sections;
 use App\Http\Controllers\Controller;
 use App\Models\Classroom;
 use App\Models\Grade;
+use App\Models\Teacher;
 
 class SectionsController extends Controller
 {
 
     public function index()
     {
-        $Grades = Grade::with(['Sections'])->get();
-        $list_Grades = Grade::get();
-        return view('pages.Sections.Sections',compact('Grades','list_Grades'));
+        $Grades         = Grade::with(['Sections'])->get();
+        $list_Grades    = Grade::get();
+        $teachers       = Teacher::get();
+        return view('pages.Sections.Sections',compact('Grades','list_Grades','teachers'));
     }
 
     public function getclasses($id)

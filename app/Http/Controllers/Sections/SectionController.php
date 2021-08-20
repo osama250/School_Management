@@ -19,7 +19,7 @@ class SectionController extends Controller
         $Sections->Class_id         = $request->Class_id;
         $Sections->Status           = 1;
         $Sections->save();
-        // $Sections->teachers()->attach($request->teacher_id);
+        $Sections->teachers()->attach($request->teacher_id);
         toastr()->success(trans('messages.success'));
 
         return redirect()->route('Sections.index');
@@ -46,12 +46,12 @@ class SectionController extends Controller
             $Sections->Status = 2;
         }
 
-       // update pivot tABLE
-        // if (isset($request->teacher_id)) {
-        //     $Sections->teachers()->sync($request->teacher_id);
-        // } else {
-        //     $Sections->teachers()->sync(array());
-        // }
+        // update pivot table
+        if (isset($request->teacher_id)) {
+            $Sections->teachers()->sync($request->teacher_id);
+        } else {
+            $Sections->teachers()->sync(array());
+        }
 
         $Sections->save();
         toastr()->success(trans('messages.Update'));
