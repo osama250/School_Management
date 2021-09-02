@@ -151,6 +151,7 @@
                 </li>
 
                 <!-- Accounts-->
+                <!-- Accounts-->
                 <li>
                     <a href="javascript:void(0);" data-toggle="collapse" data-target="#Accounts-menu">
                         <div class="pull-left"><i class="fas fa-money-bill-wave-alt"></i><span
@@ -159,11 +160,11 @@
                         <div class="clearfix"></div>
                     </a>
                     <ul id="Accounts-menu" class="collapse" data-parent="#sidebarnav">
-                        <li> <a href="">الرسوم الدراسية</a> </li>
-                        <li> <a href="">الفواتير</a> </li>
-                        <li> <a href="">سندات القبض</a> </li>
-                        <li> <a href="">استبعاد رسوم</a> </li>
-                        <li> <a href="">سندت الصرف</a> </li>
+                        <li> <a href="{{ route('Fees.create') }}">الرسوم الدراسية</a> </li>
+                        <li> <a href="{{ route('Fees_Invoices.index') }}">الفواتير</a> </li>
+                        {{-- <li> <a href="{{ route('receipt_students.index') }}">سندات القبض</a> </li>
+                        <li> <a href="{{ route('ProcessingFee.index') }}">استبعاد رسوم</a> </li>
+                        <li> <a href="{{ route('Payment_students.index') }}">سندت الصرف</a> </li> --}}
                     </ul>
                 </li>
 

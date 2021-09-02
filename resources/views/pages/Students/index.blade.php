@@ -64,11 +64,11 @@
                                                             href="{{ route('Student.edit', $student->id) }}"><i
                                                                 style="color:green" class="fa fa-edit"></i>&nbsp;
                                                             تعديل بيانات الطالب</a>
-                                                        {{-- <a class="dropdown-item"
+                                                        <a class="dropdown-item"
                                                             href="{{ route('Fees_Invoices.show', $student->id) }}"><i
                                                                 style="color: #0000cc"
                                                                 class="fa fa-edit"></i>&nbsp;اضافة فاتورة
-                                                            رسوم&nbsp;</a> --}}
+                                                            رسوم&nbsp;</a>
                                                         {{-- <a class="dropdown-item"
                                                             href="{{ route('receipt_students.show', $student->id) }}"><i
                                                                 style="color: #9dc8e2"

@@ -65,6 +65,8 @@ Route::group(
             Route::post('Delete_attachment', 'StudentController@Delete_attachment')->name('Delete_attachment');
             Route::resource('Promotion', 'PromotionController');
             Route::resource('Graduated', 'GraduatedController');
+            Route::resource('Fees', 'FeesController');
+            Route::resource('Fees_Invoices', 'FeesInvoicesController');
         });
 
 });

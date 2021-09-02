@@ -25,6 +25,10 @@ class SectionsTableSeeder extends Seeder
         [
             'en' => 'c' ,
             'ar' => 'ت'
+        ] ,
+        [
+            'en' => 'd' ,
+            'ar' => 'ث'
         ]
     ];
 

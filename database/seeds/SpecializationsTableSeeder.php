@@ -26,6 +26,10 @@ class SpecializationsTableSeeder extends Seeder
             [
                 'en'=> 'English',
                 'ar'=> 'انجليزي'
+            ] ,
+            [
+                'en'=> 'Programming',
+                'ar'=> 'برمجة'
             ]
         ];
         foreach ($specializations as $S) {
