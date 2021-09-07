@@ -8,7 +8,7 @@ class CreateFeeInvoicesTable extends Migration
 {
 
     public function up()
-    {
+    { //   بحفظ فيه الفاتورة دى على انهى طاالب عندى فى السيستم وانهى فاتورة بالظبط من جدول الفواتير 
         Schema::create('fee_invoices', function (Blueprint $table) {
             $table->id();
             $table->date('invoice_date');

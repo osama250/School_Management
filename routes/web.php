@@ -67,6 +67,9 @@ Route::group(
             Route::resource('Graduated', 'GraduatedController');
             Route::resource('Fees', 'FeesController');
             Route::resource('Fees_Invoices', 'FeesInvoicesController');
+            Route::resource('receipt_students', 'ReceiptStudentsController');
+            Route::resource('ProcessingFee', 'ProcessingFeeController');
+            Route::resource('Payment_students', 'PaymentController');
         });
 
 });

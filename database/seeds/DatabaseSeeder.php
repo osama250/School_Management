@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
             SpecializationsTableSeeder::class ,
             //  StudentsTableSeeder::class
          ]);
+
     }
 }

@@ -8,7 +8,7 @@ class CreateFeesTable extends Migration
 {
 
     public function up()
-    {
+    {  //   بحفظ فيه كل الرسوم الدراسية اسعار كل مرحلة وكل صف  
         Schema::create('fees', function (Blueprint $table) {
             $table->id();
             $table->string('title');
