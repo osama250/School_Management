@@ -177,7 +177,7 @@
                         <div class="clearfix"></div>
                     </a>
                     <ul id="Attendance-icon" class="collapse" data-parent="#sidebarnav">
-                        <li> <a href="">قائمة الطلاب</a> </li>
+                        <li> <a href="{{ route('Attendance.index') }}">قائمة الطلاب</a> </li>
                     </ul>
                 </li>
 
@@ -190,7 +190,7 @@
                         <div class="clearfix"></div>
                     </a>
                     <ul id="Subjects" class="collapse" data-parent="#sidebarnav">
-                        <li> <a href="">قائمة المواد</a> </li>
+                        <li> <a href="{{ route('subjects.index') }}">قائمة المواد</a> </li>
                     </ul>
                 </li>
 
@@ -203,10 +203,9 @@
                         <div class="clearfix"></div>
                     </a>
                     <ul id="Exams-icon" class="collapse" data-parent="#sidebarnav">
-                        <li> <a href="">قائمة الامتحانات</a> </li>
+                        <li> <a href="{{ route('Exams.index') }}">قائمة الامتحانات</a> </li>
                     </ul>
                 </li>
-
 
                 <!-- library-->
                 <li>

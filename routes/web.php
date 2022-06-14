@@ -70,6 +70,17 @@ Route::group(
             Route::resource('receipt_students', 'ReceiptStudentsController');
             Route::resource('ProcessingFee', 'ProcessingFeeController');
             Route::resource('Payment_students', 'PaymentController');
+            Route::resource('Attendance', 'AttendanceController');
+        });
+
+          //subjects
+        Route::group(['namespace' => 'Subjects'], function () {
+            Route::resource('subjects', 'SubjectController');
+        });
+
+        //Exams
+        Route::group(['namespace' => 'Exams'], function () {
+            Route::resource('Exams', 'ExamController');
         });
 
 });
