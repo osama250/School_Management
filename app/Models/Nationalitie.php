@@ -10,5 +10,5 @@ class Nationalitie extends Model
     use HasTranslations;
     public $translatable    = ['Name'];
     protected $fillable     = ['Name'];
-    //protected $guarded =[];  // nay cokumn insert intbl
+    //protected $guarded =[];                  // any column insert in tbl
 }

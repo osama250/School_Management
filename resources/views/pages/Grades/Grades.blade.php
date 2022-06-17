@@ -26,7 +26,7 @@
 <div class="col-xl-12 mb-30">
     <div class="card card-statistics h-100">
         <div class="card-body">
-
+        {{-- error of validation  --}}
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -63,17 +63,17 @@
                                 <td>{{ $Grade->Notes }}</td>
                                 <td>
                                     <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
-                                        data-target="#edit{{ $Grade->id }}"
+                                        data-target="#edit{{ $Grade->id }}"       {{--  to open modle edit with data    --}}
                                         title="{{ trans('Grades_trans.Edit') }}"><i
                                             class="fa fa-edit"></i></button>
                                     <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
-                                        data-target="#delete{{ $Grade->id }}"
+                                        data-target="#delete{{ $Grade->id }}"     {{--  to open modle delete with data    --}}
                                         title="{{ trans('Grades_trans.Delete') }}"><i
                                             class="fa fa-trash"></i></button>
                                 </td>
                             </tr>
 
-                            <!-- edit_modal_Grade -->
+                            <!-- edit_modal_Grade  to edit  sent id when choosse edit  -->
                             <div class="modal fade" id="edit{{ $Grade->id }}" tabindex="-1" role="dialog"
                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -89,7 +89,7 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <!-- add_form -->
+                                            <!-- add_form to update grade -->
                                             <form action="{{ route('Grade.update', 'test') }}" method="post">
                                                 {{ method_field('patch') }}
                                                 @csrf
@@ -102,6 +102,7 @@
                                                             class="form-control"
                                                             value="{{ $Grade->getTranslation('Name', 'ar') }}"
                                                             required>
+                                                            {{-- id of grade to know you update  --}}
                                                         <input id="id" type="hidden" name="id" class="form-control"
                                                             value="{{ $Grade->id }}">
                                                     </div>
@@ -123,7 +124,6 @@
                                                         rows="3">{{ $Grade->Notes }}</textarea>
                                                 </div>
                                                 <br><br>
-
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
                                                         data-dismiss="modal">{{ trans('Grades_trans.Close') }}</button>
@@ -131,7 +131,6 @@
                                                         class="btn btn-success">{{ trans('Grades_trans.submit') }}</button>
                                                 </div>
                                             </form>
-
                                         </div>
                                     </div>
                                 </div>
@@ -157,6 +156,7 @@
                                                 {{ method_field('Delete') }}
                                                 @csrf
                                                 {{ trans('Grades_trans.Warning_Grade') }}
+                                                {{-- id tp use of delete  --}}
                                                 <input id="id" type="hidden" name="id" class="form-control"
                                                     value="{{ $Grade->id }}">
                                                 <div class="modal-footer">
@@ -170,8 +170,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
                         @endforeach
                 </table>
             </div>
