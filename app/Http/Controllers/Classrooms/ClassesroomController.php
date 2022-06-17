@@ -20,9 +20,9 @@ class ClassesroomController extends Controller
 
     public function delete_all(Request $request)
     {
-        $delete_all_id = explode(",", $request->delete_all_id);
+        $delete_all_id = explode(",", $request->delete_all_id );   //  explode  return data in array
 
-        Classroom::whereIn('id', $delete_all_id)->Delete();
+        Classroom::whereIn('id', $delete_all_id)->Delete();       //   wherein  search in array  by id
         toastr()->error(trans('messages.Delete'));
         return redirect()->route('Classrooms.index');
     }

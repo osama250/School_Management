@@ -3,8 +3,8 @@
 return [
 
     'Dashboard'                 =>'الرئيسية',
-    'Dashboard_page'            =>'لوحة التحكم',
-    'Main_title'                =>'برنامج ادارة المدارس',
+    // 'Dashboard_page'            =>'لوحة التحكم',
+    'Main_title'                =>'لوحة التحكم',
     'Programname'               =>'برنامج ادارة المدارس',
     'change_language'           =>'تغير اللغة',
     'Grades'                    =>'المراحل الدراسية',
