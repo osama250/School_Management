@@ -11,19 +11,19 @@ use Illuminate\Http\Request;
 class ClassroomController extends Controller
 {
 
-    public function store(StoreClassroom $request)
+    public function store( StoreClassroom $request )
     {
 
-        $List_Classes = $request->List_Classes;  // all classes get from form
+        $List_Classes = $request->List_Classes;         // all classes get from form
 
         try {
 
-            $validated = $request->validated();
+            // $validated = $request->validated();
             foreach ($List_Classes as $List_Class) {
 
                 $My_Classes = new Classroom();
 
-                $My_Classes->Name_Class  = ['en' => $List_Class['Name_class_en'], 'ar' => $List_Class['Name']];
+                $My_Classes->Name_Class  = [ 'en' => $List_Class['Name_class_en'] , 'ar' => $List_Class['Name_class_ar'] ];
 
                 $My_Classes->Grade_id    = $List_Class['Grade_id'];
 
@@ -33,13 +33,13 @@ class ClassroomController extends Controller
 
             toastr()->success(trans('messages.success'));
             return redirect()->route('Classrooms.index');
+
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
     }
 
-    public function update(Request $request)
-    {
+    public function update( StoreClassroom $request)  {
 
         try {
 
@@ -47,21 +47,18 @@ class ClassroomController extends Controller
 
             $Classrooms->update([
 
-                $Classrooms->Name_Class = ['ar' => $request->Name, 'en' => $request->Name_en],
+                $Classrooms->Name_Class = ['ar' => $request->Name_ar , 'en' => $request->Name_en],
                 $Classrooms->Grade_id   = $request->Grade_id,
             ]);
             toastr()->success(trans('messages.Update'));
             return redirect()->route('Classrooms.index');
-        }
 
-        catch
-        (\Exception $e) {
+        }  catch  (\Exception $e) {
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
     }
 
-    public function destroy(Request $request)
-    {
+    public function destroy(Request $request) {
         $Classrooms = Classroom::findOrFail($request->id)->delete();
         toastr()->error(trans('messages.Delete'));
         return redirect()->route('Classrooms.index');

@@ -35,7 +35,7 @@
 </script>
 
 
-
+        {{-- when choose language ar or en  --}}
 @if (App::getLocale() == 'en')
     <script src="{{ URL::asset('assets/js/bootstrap-datatables/en/jquery.dataTables.min.js') }}"></script>
     <script src="{{ URL::asset('assets/js/bootstrap-datatables/en/dataTables.bootstrap4.min.js') }}"></script>
@@ -45,8 +45,8 @@
 @endif
 
 
-
-<script>
+        {{-- when coose ckeck all   --}}
+  <script>
     function CheckAll(className, elem) {
         var elements = document.getElementsByClassName(className);
         var l = elements.length;
