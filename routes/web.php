@@ -41,7 +41,7 @@ Route::group(
         Route::group(['namespace' => 'Sections'], function () {
             Route::resource('Sections', 'SectionsController');
             Route::resource('Section', 'SectionController');
-            Route::get('/classes/{id}', 'SectionsController@getclasses');
+            Route::get('/classes/{id}', 'SectionsController@getclasses');       // route to use ajax
         });
 
         // Parents
