@@ -8,16 +8,14 @@ use App\Http\Requests\StoreSections;
 class SectionController extends Controller
 {
 
-  public function store(StoreSections $request)
-  {
+  public function store(StoreSections $request) {
     try
     {
-        $validated  = $request->validated();
         $Sections   = new Section();
         $Sections->Name_Section     = ['ar' => $request->Name_Section_Ar, 'en' => $request->Name_Section_En];
         $Sections->Grade_id         = $request->Grade_id;
         $Sections->Class_id         = $request->Class_id;
-        $Sections->Status           = 1;
+        $Sections->Status           = 1;        // now section is active
         $Sections->save();
         $Sections->teachers()->attach($request->teacher_id);
         toastr()->success(trans('messages.success'));
@@ -29,11 +27,10 @@ class SectionController extends Controller
     }
   }
 
-  public function update(StoreSections $request)
-  {
+  public function update(StoreSections $request) {
     try
     {
-        $validated  = $request->validated();
+        // $validated  = $request->validated();
         $Sections   = Section::findOrFail($request->id);
 
         $Sections->Name_Section  = ['ar' => $request->Name_Section_Ar, 'en' => $request->Name_Section_En];
@@ -63,11 +60,10 @@ class SectionController extends Controller
     }
   }
 
-  public function destroy(request $request)
-    {
+  public function destroy(request $request)  {
         Section::findOrFail($request->id)->delete();
         toastr()->error(trans('messages.Delete'));
         return redirect()->route('Sections.index');
-    }
+  }
 
 }
