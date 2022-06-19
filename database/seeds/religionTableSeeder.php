@@ -12,7 +12,6 @@ class religionTableSeeder extends Seeder
         DB::table('religions')->delete();
 
         $religions = [
-
             [
                 'en'=> 'Muslim',
                 'ar'=> 'مسلم'
@@ -25,7 +24,6 @@ class religionTableSeeder extends Seeder
                 'en'=> 'Other',
                 'ar'=> 'غيرذلك'
             ],
-
         ];
 
         foreach ($religions as $R) {

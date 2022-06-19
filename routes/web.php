@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 
-Route::group([ 'middleware' => ['guest'] ] , function () {
+Route::group([ 'middleware' => ['guest'] ] , function () {      // this route only vivit users not login
 
     Route::get('/', function () {
         return view('auth.login');
@@ -18,7 +18,7 @@ Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
-    ], function(){
+    ], function(){            // localesessionredirect    to show last en after logout and login again
 
         // Dashbord
         Route::get('/dashboard', 'HomeController@index')->name('dashboard');
@@ -41,11 +41,11 @@ Route::group(
         Route::group(['namespace' => 'Sections'], function () {
             Route::resource('Sections', 'SectionsController');
             Route::resource('Section', 'SectionController');
-            Route::get('/classes/{id}', 'SectionsController@getclasses');
+            Route::get('/classes/{id}', 'SectionsController@getclasses');       // route to use ajax
         });
 
         // Parents
-        Route::view('add_parent','livewire.show_Form');
+        Route::view('add_parent','livewire.show_Form');      // use Route View to go direct view witout go to controlller
 
         //Teachers
         Route::group(['namespace' => 'Teachers'], function () {
