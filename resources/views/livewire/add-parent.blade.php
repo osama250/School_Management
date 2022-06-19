@@ -14,23 +14,23 @@
     @endif
 
 
-    @if ($show_table) {{-- to show table --}}
+    @if ($show_table)            {{-- to show table   if == true  to i want first show table before choose add parents --}}
         @include('livewire.Parent_Table')
     @else
         <div class="stepwizard">
             <div class="stepwizard-row setup-panel">
                 <div class="stepwizard-step">
-                    <a href="#step-1" type="button"
+                    <a href="#step-1" type="button"    {{-- if currentstep = 1 show from father  --}}
                         class="btn btn-circle {{ $currentStep != 1 ? 'btn-default' : 'btn-success' }}">1</a>
                     <p>{{ trans('Parent_trans.Step1') }}</p>
                 </div>
                 <div class="stepwizard-step">
-                    <a href="#step-2" type="button"
+                    <a href="#step-2" type="button"      {{-- if currentstep = 1 show from mother  --}}
                         class="btn btn-circle {{ $currentStep != 2 ? 'btn-default' : 'btn-success' }}">2</a>
                     <p>{{ trans('Parent_trans.Step2') }}</p>
                 </div>
                 <div class="stepwizard-step">
-                    <a href="#step-3" type="button"
+                    <a href="#step-3" type="button"   {{-- if currentstep = 3 show sure information  --}}
                         class="btn btn-circle {{ $currentStep != 3 ? 'btn-default' : 'btn-success' }}"
                         disabled="disabled">3</a>
                     <p>{{ trans('Parent_trans.Step3') }}</p>
@@ -61,11 +61,11 @@
                     <button class="btn btn-danger btn-sm nextBtn btn-lg pull-right" type="button"
                         wire:click="back(2)">{{ trans('Parent_trans.Back') }}</button>
                     {{-- do what edit or add --}}
-                    @if ($updateMode)
+                    @if ($updateMode)          {{--  if get from updtae continue to update  --}}
                         <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" wire:click="submitForm_edit"
                             type="button">{{ trans('Parent_trans.Finish') }}
                         </button>
-                    @else
+                    @else                       {{--   else continue  add  --}}
                         <button class="btn btn-success btn-sm btn-lg pull-right" wire:click="submitForm"
                             type="button">{{ trans('Parent_trans.Finish') }}</button>
                     @endif

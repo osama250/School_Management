@@ -1,4 +1,4 @@
-@if ($currentStep != 2)
+@if ($currentStep != 2)         {{--  if number 2  dont choose hide form Mather  --}}
     <div style="display: none" class="row setup-content" id="step-2">
 @endif
 <div class="col-xs-12">
@@ -111,16 +111,16 @@
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
-
+                                                            {{--   1 to back Father form  --}}
         <button class="btn btn-danger btn-sm nextBtn btn-lg pull-right" type="button" wire:click="back(1)">
             {{ trans('Parent_trans.Back') }}
         </button>
         {{-- do what edit or add --}}
-        @if ($updateMode)
+        @if ($updateMode)             {{--  if get from updtae continue to update  --}}
             <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" wire:click="secondStepSubmit_edit"
                 type="button">{{ trans('Parent_trans.Next') }}
             </button>
-        @else
+        @else                        {{--   else continue  add  --}}
             <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="button"
                 wire:click="secondStepSubmit">{{ trans('Parent_trans.Next') }}
             </button>

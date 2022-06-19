@@ -1,4 +1,4 @@
-<button class="btn btn-success btn-sm btn-lg pull-right" wire:click="showformadd"
+<button class="btn btn-success btn-sm btn-lg pull-right" wire:click="showformadd" {{--  whne click go to  hiedden table  --}}
     type="button">{{ trans('Parent_trans.add_parent') }}</button><br><br>
 <div class="table-responsive">
     <table id="datatable" class="table  table-hover table-sm table-bordered p-0" data-page-length="50"
@@ -9,7 +9,6 @@
                 <th>{{ trans('Parent_trans.Email') }}</th>
                 <th>{{ trans('Parent_trans.Name_Father') }}</th>
                 <th>{{ trans('Parent_trans.National_ID_Father') }}</th>
-                <th>{{ trans('Parent_trans.Passport_ID_Father') }}</th>
                 <th>{{ trans('Parent_trans.Phone_Father') }}</th>
                 <th>{{ trans('Parent_trans.Job_Father') }}</th>
                 <th>{{ trans('Parent_trans.Processes') }}</th>
@@ -24,15 +23,14 @@
                     <td>{{ $my_parent->Email }}</td>
                     <td>{{ $my_parent->Name_Father }}</td>
                     <td>{{ $my_parent->National_ID_Father }}</td>
-                    <td>{{ $my_parent->Passport_ID_Father }}</td>
                     <td>{{ $my_parent->Phone_Father }}</td>
                     <td>{{ $my_parent->Job_Father }}</td>
                     <td>
                         <button wire:click="edit({{ $my_parent->id }})" title="{{ trans('Grades_trans.Edit') }}"
-                            class="btn btn-primary btn-sm"><i class="fa fa-edit"></i>
+                            class="btn btn-primary btn-sm"><i class="fa fa-edit"></i>              {{-- to make edit  --}}
                         </button>
                         <button type="button" class="btn btn-danger btn-sm" wire:click="delete({{ $my_parent->id }})"
-                            title="{{ trans('Grades_trans.Delete') }}"><i class="fa fa-trash"></i>
+                            title="{{ trans('Grades_trans.Delete') }}"><i class="fa fa-trash"></i>  {{-- to make delete --}}
                         </button>
                     </td>
                 </tr>

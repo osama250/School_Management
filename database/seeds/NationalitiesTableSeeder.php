@@ -12,7 +12,6 @@ class NationalitiesTableSeeder extends Seeder
         DB::table('nationalities')->delete();
 
         $nationals = [
-
             [
                 'en'    => 'Egyption',
                 'ar'    => 'مصرى'
@@ -40,7 +39,6 @@ class NationalitiesTableSeeder extends Seeder
                 'ar'    => 'أردني'
             ],
             [
-
                 'en'    => 'Moroccan',
                 'ar'    => 'مغربي'
             ],

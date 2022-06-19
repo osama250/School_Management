@@ -1,4 +1,4 @@
-@if ($currentStep != 1)
+@if ($currentStep != 1)      {{--  if number 1 father dont choose hide form father  --}}
     <div style="display: none" class="row setup-content" id="step-1">
 @endif
 <div class="col-xs-12">
@@ -7,7 +7,7 @@
         <div class="form-row">
             <div class="col">
                 <label for="title">{{ trans('Parent_trans.Email') }}</label>
-                <input type="email" wire:model="Email" class="form-control">
+                <input type="email" wire:model="Email" class="form-control">    {{--  wire:model like name  input html --}}
                 @error('Email')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -135,7 +135,7 @@
             </button>
         @else
             <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" wire:click="firstStepSubmit"
-                type="button">{{ trans('Parent_trans.Next') }}
+                type="button">{{ trans('Parent_trans.Next') }}          {{--  to go next to from mother  --}}
             </button>
         @endif
 

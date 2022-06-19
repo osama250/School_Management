@@ -45,7 +45,7 @@ Route::group(
         });
 
         // Parents
-        Route::view('add_parent','livewire.show_Form');
+        Route::view('add_parent','livewire.show_Form');      // use Route View to go direct view witout go to controlller
 
         //Teachers
         Route::group(['namespace' => 'Teachers'], function () {
